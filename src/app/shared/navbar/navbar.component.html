@@ -1,0 +1,42 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg">
+  <logo>
+    <h4>
+      <strong>
+        <a [routerLink]="['/']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Guroomed</a>
+      </strong>
+    </h4>
+  </logo>
+  <links class="ml-4">
+    <app-elastic-search></app-elastic-search>
+  </links>
+
+  <links>
+    <form class="form-inline waves-light ml-auto">
+      <button type="button" class="btn btn-outline-info waves-light" (click)="style.show()" mdbRippleRadius *ngIf="!authService.loggedIn()">Log In</button>
+      <button type="button" class="btn btn-outline-info waves-light" mdbRippleRadius *ngIf="authService.loggedIn()" (click)="onLogoutClick()">Logout</button>
+      <button type="button" class="btn btn-danger waves-light" mdbRippleRadius *ngIf="!authService.loggedIn()">Sign Up</button>
+    </form>
+  </links>
+</mdb-navbar>
+
+<div mdbModal #style="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="heading lead">Login To Guroomed!</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="style.hide()">
+          <span aria-hidden="true" class="white-black">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-login></app-login>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <p>Don't have an account ?
+          <a>Sign Up</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

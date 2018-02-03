@@ -1,0 +1,14 @@
+{
+    "/api": {
+        "target": "http://127.0.0.1:8000",
+        "secure": false
+    },
+    "/api/frontend/login": {
+        "target": "http://127.0.0.1:8000",
+        "secure": false
+    },
+    "/api/courses/search/filters": {
+        "target": "http://127.0.0.1:8000",
+        "secure": false
+    }
+}

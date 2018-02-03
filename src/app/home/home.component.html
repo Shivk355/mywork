@@ -1,0 +1,23 @@
+<div *ngIf="homeData" style="background-color: #f7f8fa;">
+    <app-infostrip [data]="homeData?.homepagedata?.infostrip"></app-infostrip>
+    <div class="container">
+        <h5 class="mt-4">Top Courses in "Developement"</h5>
+        <app-coursecontainer [courses]="homeData?.homepagedata?.courses[0]?.development"></app-coursecontainer>
+        <h5 class="mt-4">Top Courses in "Business"</h5>
+        <app-coursecontainer [courses]="homeData?.homepagedata?.courses[1]?.business"></app-coursecontainer>
+        <h5 class="mt-4">Top Courses in "Desgin"</h5>
+        <app-coursecontainer [courses]="homeData?.homepagedata?.courses[2]?.design"></app-coursecontainer>
+
+        <app-popularcourses></app-popularcourses>
+
+        <div class="row text-md-center">
+            <div class="col-md-6 right-border-color">
+                <app-beinstructor [data]="homeData?.homepagedata?.be_instructor"></app-beinstructor>
+            </div>
+            <div class="col-md-6">
+                <app-forbusiness [data]="homeData?.homepagedata?.for_business"></app-forbusiness>
+            </div>
+        </div>
+
+    </div>
+</div>

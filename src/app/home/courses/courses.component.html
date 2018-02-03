@@ -1,0 +1,50 @@
+<div class="card mt-2 mb-2">
+  <img class="img-fluid" src="https://udemy-images.udemy.com/course/240x135/1178124_76bb_5.jpg" alt="Card image cap">
+  <div class="card-body">
+    <!--Title-->
+    <h6><b class="card-title">{{_data.title.length > 32 ? (_data.title | slice:0:32)+ '.....': _data.title}}</b></h6>
+    <!--Text-->
+    <p class="card-text authorname">{{_data.trainers}}</p>
+    <p>
+      <i class="fa fa-star fa-lg yellow-text" aria-hidden="true"></i>
+      <i class="fa fa-star fa-lg yellow-text" aria-hidden="true"></i>
+      <i class="fa fa-star fa-lg yellow-text" aria-hidden="true"></i>
+      <i class="fa fa-star fa-lg yellow-text" aria-hidden="true"></i>
+      <i class="fa fa-star fa-lg yellow-text" aria-hidden="true"></i>
+    </p>
+
+    <button class="btn btn-sm btn-primary waves-light" (click)="style.show()" mdbRippleRadius>View Details</button>
+    <b>
+      <i class="fa fa-inr"></i>&nbsp;960</b>
+  </div>
+</div>
+
+<!-- Modal -->
+
+<div mdbModal #style="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="heading lead">{{_data.title}}</p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="style.hide()">
+          <span aria-hidden="true" class="white-black">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <i class="fa fa-play" aria-hidden="true"></i>&nbsp;{{_data.modal_data.no_lectures}}&nbsp;lectures
+          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{{_data.modal_data.hours}}&nbsp;hours
+          <i class="fa fa-level-up" aria-hidden="true"></i>&nbsp;{{_data.modal_data.level}}&nbsp;Level
+        </p>
+        <h6>
+          <b>{{_data.modal_data.desc_points}}</b>
+        </h6>
+        <p>{{_data.modal_data.description}}</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-lg btn-add-to-cart" data-dismiss="modal" mdbRippleRadius (click)="style.hide()">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

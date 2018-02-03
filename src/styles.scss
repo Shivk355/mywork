@@ -1,0 +1,20 @@
+.navbar{
+    background-color: #fff;
+}
+
+mdb-completer .completer-holder{
+    margin-bottom: 0rem;
+}
+
+mdb-completer .completer-holder input[type=search]{
+    padding: 0.9rem;
+    background-color: #f2f3f5;
+    border-bottom: none;
+}
+
+input[type=search]:focus:not([readonly]){
+    border-bottom: none;
+    box-shadow: none;
+    background-color: #fff;
+    border: 0.2px solid #ccc;
+}

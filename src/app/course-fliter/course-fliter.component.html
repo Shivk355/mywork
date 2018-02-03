@@ -1,0 +1,50 @@
+ <!-- Searched Courses -->
+ <div class="row" *ngFor="let courseData of searchedCourseDataList" style="border: 1px solid #ddd;margin: 1rem 0rem 0rem 0rem;">
+    <div class="col-md-3" style="padding: 0rem;">
+        <img class="img-fluid" [src]="courseData[1]._source.image_url" alt="Image not found">
+    </div>
+    <div class="col-md-9">
+        <div>
+            <h4>{{courseData[1]._source.coursename}} - {{courseData[1]._source.subtitles}}</h4>
+            <a>{{courseData[1]._source.instructor}} : Instructor</a>
+            <p>For {{courseData[1]._source.difficulty_level}}</p>
+            <p>{{courseData[1]._source.short_description}}
+                <span>|</span> {{courseData[1]._source.features}}</p>
+        </div>
+        <div class="rating-price">
+            <p>
+                <span *ngIf="courseData[1]._source.offer">
+                    <i class="fa fa-inr"></i>
+                    <b> {{courseData[1]._source.offer}} </b>&nbsp;
+                </span>
+                <strike *ngIf="courseData[1]._source.offer">
+                    <i class="fa fa-inr"></i> {{courseData[1]._source.price}}
+                </strike>
+                <span *ngIf="!courseData[1]._source.offer">
+                    <i class="fa fa-inr"></i> {{courseData[1]._source.price}}
+                </span>
+            </p>
+            <p>
+                <i class="fa fa-star fa-lg yellow-text"></i>
+                <i class="fa fa-star fa-lg yellow-text"></i>
+                <i class="fa fa-star fa-lg yellow-text"></i>
+                <i class="fa fa-star fa-lg yellow-text"></i>
+                <i class="fa fa-star fa-lg yellow-text"></i>
+                {{courseData[1]._source.rating_score}}
+                <br> ({{courseData[1]._source.no_of_reviews}} ratings)
+            </p>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <i class="fa fa-play"></i> {{courseData[1]._source.no_of_lectures}} Lectures</li>
+                <li>
+                    <i class="fa fa-clock-o"></i> {{courseData[1]._source.hours}} Hours</li>
+                <li>
+                    <i class="fa fa-level-up"></i> {{courseData[1]._source.difficulty_level}} Level</li>
+                <li>{{courseData[1]._source.languages}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- ./Search Courses -->

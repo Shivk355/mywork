@@ -1,0 +1,14 @@
+<form>
+  <div class="row">
+    <div class="col-md-10">
+      <mdb-completer name="autocomplete" [(ngModel)]="searchStr1" (selected)="getSearchString($event)" [datasource]="dataService"
+        [minSearchLength]="2" placeholder="Search for Course" #searchStr (keyup)="onKey($event)">
+      </mdb-completer>
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-search" (click)="getSearchString(searchStr.value)">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>  
+</form>
